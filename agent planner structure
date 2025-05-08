@@ -1,0 +1,99 @@
+import os
+
+# Root package directory
+root_dir = "/mnt/data/agentplanner"
+os.makedirs(root_dir, exist_ok=True)
+
+# Define submodules and files
+structure = {
+    "agentplanner": [
+        "__init__.py",
+        "core.py",
+        "llm.py",
+        "embedding.py",
+        "cloud.py",
+        "huggingface.py",
+        "chains.py",
+        "orchestration.py"
+    ],
+    "examples": [
+        "use_agentplanner.py"
+    ]
+}
+
+# Create directories and empty files
+for folder, files in structure.items():
+    folder_path = os.path.join(root_dir, folder)
+    os.makedirs(folder_path, exist_ok=True)
+    for file in files:
+        file_path = os.path.join(folder_path, file)
+        with open(file_path, "w") as f:
+            f.write("# " + file.replace(".py", "").capitalize() + "\n")
+
+# Generate requirements.txt and setup.py
+requirements_txt = '''\
+openai
+boto3
+google-cloud-storage
+azure-identity
+azure-storage-blob
+simple-salesforce
+ibm-watson
+heroku3
+PyDrive
+transformers
+sentence-transformers
+'''
+
+setup_py = '''\
+from setuptools import setup, find_packages
+
+setup(
+    name='agentplanner',
+    version='0.1',
+    packages=find_packages(),
+    install_requires=[
+        'openai',
+        'boto3',
+        'google-cloud-storage',
+        'azure-identity',
+        'azure-storage-blob',
+        'simple-salesforce',
+        'ibm-watson',
+        'heroku3',
+        'PyDrive',
+        'transformers',
+        'sentence-transformers'
+    ],
+    author='Narachanikath',
+    description='Modular LLM + Cloud Orchestration Framework',
+    long_description=open('README.md').read(),
+    long_description_content_type='text/markdown',
+    keywords=['LLM', 'multi-agent', 'framework'],
+    python_requires='>=3.8'
+)
+'''
+
+readme_md = '''\
+# AgentPlanner
+
+AgentPlanner is a modular orchestration framework to integrate LLMs, embeddings, and cloud platforms.
+
+## Directory Structure
+
+- `core.py`: Entry-point and instance creator.
+- `llm.py`: Basic LLM interaction logic.
+- `embedding.py`: HuggingFace and OpenAI embeddings.
+- `cloud.py`: Multi-cloud connections (AWS, Azure, GCP, etc.).
+- `huggingface.py`: HF utilities.
+- `chains.py`: SimpleChain, SequentialChain, ParallelChain.
+- `orchestration.py`: Core orchestrator.
+
+## Example Usage
+
+```python
+from agentplanner.core import AgentPlanner
+
+agent = AgentPlanner()
+response = agent.run("Explain AI", steps=["llm:openai"])
+print(response)

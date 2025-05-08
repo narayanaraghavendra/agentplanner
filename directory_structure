@@ -1,0 +1,19 @@
+agentplanner/
+│
+├── agentplanner/
+│   ├── __init__.py
+│   ├── core.py                  # Main AgentPlanner instance
+│   ├── llm.py                   # LLM model interface
+│   ├── chains.py                # SimpleChain, SequentialChain, ParallelChain
+│   ├── embedding.py             # Embedding methods
+│   ├── huggingface.py           # Hugging Face integration
+│   ├── cloud.py                 # Cloud service connectors
+│   ├── orchestration.py         # Orchestration utilities
+│   └── docker.py                # .docker method
+│
+├── examples/
+│   └── use_agentplanner.py      # How to use the package
+│
+├── setup.py
+├── requirements.txt
+└── README.md

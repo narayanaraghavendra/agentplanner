@@ -1,0 +1,23 @@
+openai
+boto3
+google-cloud-storage
+azure-identity
+azure-storage-blob
+simple-salesforce
+ibm-watson
+heroku3
+PyDrive
+transformers
+sentence-transformers
+boto3
+azure-storage-blob
+google-cloud-storage
+simple-salesforce
+ibm-boto3
+heroku3
+pydrive
+aliyun-python-sdk-core
+
+
+
+-e .

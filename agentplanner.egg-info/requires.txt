@@ -1,0 +1,11 @@
+openai
+boto3
+google-cloud-storage
+azure-identity
+azure-storage-blob
+simple-salesforce
+ibm-watson
+heroku3
+PyDrive
+transformers
+sentence-transformers

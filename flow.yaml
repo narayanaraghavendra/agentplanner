@@ -1,0 +1,26 @@
+
+---
+
+### 14. **Running the Setup**
+
+To create the package:
+
+1. **Install the necessary dependencies**:
+    ```bash
+    pip install twine setuptools
+    ```
+
+2. **Build the package**:
+    ```bash
+    python setup.py sdist bdist_wheel
+    ```
+
+3. **Upload to PyPI**:
+    ```bash
+    twine upload dist/*
+    ```
+
+---
+
+
+

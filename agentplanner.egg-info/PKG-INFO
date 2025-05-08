@@ -1,0 +1,53 @@
+Metadata-Version: 2.4
+Name: agentplanner
+Version: 0.1.0
+Summary: A unified LLM, embedding, and cloud orchestration framework.
+Home-page: https://github.com/narayanaraghavendra/agentplanner
+Author: Raghavendra
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: openai
+Requires-Dist: boto3
+Requires-Dist: google-cloud-storage
+Requires-Dist: azure-identity
+Requires-Dist: azure-storage-blob
+Requires-Dist: simple-salesforce
+Requires-Dist: ibm-watson
+Requires-Dist: heroku3
+Requires-Dist: PyDrive
+Requires-Dist: transformers
+Requires-Dist: sentence-transformers
+Dynamic: author
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# AgentPlanner
+
+AgentPlanner is a simple, modular framework for LLM operations, embeddings, Hugging Face integration, cloud services, and orchestrationâ€”without LangChain.
+
+## Features
+
+- Run OpenAI or HF models
+- Generate embeddings
+- Chain prompts (Simple, Sequential, Parallel)
+- Orchestrate cloud services (AWS, GCP, Azure, etc.)
+- All in one class: `AgentPlanner`
+
+## Example
+
+```python
+from agentplanner import AgentPlanner
+
+agent = AgentPlanner()
+response = agent.run("Translate this to French.", steps=["llm:openai", "embedding"])
+print(response)
+
+
+
