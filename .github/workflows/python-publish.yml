@@ -28,8 +28,7 @@ jobs:
         python setup.py sdist bdist_wheel  # Build the source and wheel distribution files
 
     - name: Upload to PyPI
-env:
-  PYPI_API_TOKEN: ${{ secrets.PYPI_API_TOKEN }}
- # This accesses the secret token you set in GitHub
+      env:
+        PYPI_API_TOKEN: ${{ secrets.PYPI_API_TOKEN }}
       run: |
-        twine upload dist/* -u __token__ -p $PYPI_API_TOKEN  # Upload the built package to PyPI
+        twine upload dist/* -u __token__ -p $PYPI_API_TOKEN
